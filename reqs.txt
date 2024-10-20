@@ -1,0 +1,3 @@
+freecurrencyapi
+rich
+simple-term-menu
