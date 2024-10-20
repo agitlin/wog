@@ -1,3 +1,4 @@
 freecurrencyapi
 rich
 simple-term-menu
+flask

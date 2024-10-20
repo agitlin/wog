@@ -1,9 +1,12 @@
-def add_score(difficulty):
+
+def get_score():
     try:
         with open('scores.txt', 'r') as file:
-            current_score = int(file.read())
+            return file.read()
     except FileNotFoundError:
-        current_score = 0
+        return 0
+def add_score(difficulty):
+    current_score = int(get_score())
 
     current_score += difficulty*3 + 5
 
