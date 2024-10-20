@@ -15,14 +15,6 @@ def welcome():
     print(f"Hi {username} and welcome to the World of Games: The Epic Journey")
 
 
-def get_input(message, min, max):
-    while True:
-        value = input(f'{message} [{min}-{max}]: ')
-        if validate_numeric_value_in_range(value, min, max):
-            return value
-        else:
-            print(f"Invalid input. Please enter a number between {min} and {max}")
-
 def start_play():
     print("Please choose a game to play:")
     options = [ guess_game.get_description(), memory_game.get_description(), currency_roulette_game.get_description()]
