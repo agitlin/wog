@@ -4,6 +4,8 @@ import memory_game
 import guess_game
 import currency_roulette_game
 import utils
+import score
+import time
 
 
 def welcome(username="Nobody"):
@@ -32,7 +34,9 @@ def start_play():
         result = memory_game.play(int(difficulty_level))
     elif game_choice == 2:
         result = currency_roulette_game.play(int(difficulty_level))
+    time.sleep(2)
     utils.screen_cleaner()
-    score= result* int(difficulty_level)
-    utils.print_info(f"Thank you for playing. Your score is: {score}")
+    if result:
+        updated_score = score.add_score(int(difficulty_level))
+        utils.print_info(f"Your score is : {updated_score}")
     
