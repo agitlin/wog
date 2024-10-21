@@ -18,11 +18,11 @@ def welcome():
 
 
 def start_play():
-    print("Please choose a game to play:")
+    print("Please choose a game to play. Use arrows to choose and Enter to confirm:")
     options = [ guess_game.get_description(), memory_game.get_description(), currency_roulette_game.get_description()]
     terminal_menu = TerminalMenu(options)
     game_choice = terminal_menu.show()
-    print("Enter the difficulty level")
+    print("Enter the difficulty level. Use arrows to choose and Enter to confirm:")
     options = ["1", "2", "3", "4", "5"]
     terminal_menu = TerminalMenu(options)
     difficulty_level = terminal_menu.show()+1
