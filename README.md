@@ -18,6 +18,6 @@
 
 ## To play the game
 
-'''bash
+```bash
 python main.py
-'''
+```
