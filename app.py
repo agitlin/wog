@@ -1,8 +1,8 @@
 
 from simple_term_menu import TerminalMenu
-import memory_game
-import guess_game
-import currency_roulette_game
+import games.memory_game as memory_game
+import games.guess_game as guess_game
+import games.currency_roulette_game as currency_roulette_game
 import utils
 import score
 import time
