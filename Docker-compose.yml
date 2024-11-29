@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: agitlin/wog:latest
+    ports:
+      - "8777:8777"
+    volumes:
+      - .:/app
+
+  push:
+    image: docker
+    command: >
+      sh -c "unset DOCKER_HOST &&
+             docker login -u agitlin -p ${DOCKER_PWD} &&
+             docker push agitlin/wog:latest"

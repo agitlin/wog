@@ -2,3 +2,5 @@ freecurrencyapi
 rich
 simple-term-menu
 flask
+selenium
+chromedriver_autoinstaller

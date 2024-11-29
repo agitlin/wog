@@ -23,4 +23,4 @@ def serve_template_string ():
         return render_template_string('<html></html>')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=8777)
