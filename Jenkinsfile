@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     writeFile file: 'scores.txt', text: '69'
-                    docker.build("${DOCKER_IMAGE}")
+                    sh 'docker-compose build'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    docker.image("${DOCKER_IMAGE}:latest").run('-p 8777:8777 --name wog')
+                    sh 'docker-compose start app'
                 }
             }
         }
