@@ -34,11 +34,16 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    try {
-                        sh 'python3 test_scores_service.py'
-                    } catch (Exception e) {
-                        error "Tests failed"
+                    
+                    def status= sh( returnStatus: true, script: 'python3 test_scores_service.py' )
+                    if (status!=0) {
+                        echo "Test failed"
+                        failed
+                    } else {
+                        echo "Test suceeded"
                     }
+                    
+
                 }
             }
         }
@@ -46,8 +51,7 @@ pipeline {
         stage('Finalize') {
             steps {
                 script {
-                    sh 'docker stop wog'
-                    sh 'docker rm wog'
+                    sh 'docker-compose start app'
 g                }
             }
         }
