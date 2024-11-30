@@ -52,7 +52,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker-compose start app'
-g                }
+                }
             }
         }
     }
