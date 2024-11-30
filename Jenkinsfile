@@ -17,6 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    writeFile file: 'scores.txt', text: '69'
                     docker.build("${DOCKER_IMAGE}")
                 }
             }
@@ -47,7 +48,7 @@ pipeline {
                 script {
                     sh 'docker stop wog'
                     sh 'docker rm wog'
-                }
+g                }
             }
         }
     }
